@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package models;
+
+option go_package = "github.com/bsanzhiev/taco-delivery/models";
+
+service CustomerService {
+  rpc CreateCustomer(Customer) returns (CustomerResponse);
+  rpc GetCustomer(CustomerID) returns (Customer);
+}
+
+message Customer {
+  int64 id = 1;
+  string name = 2;
+  string email = 3;
+  string phone = 4;
+}
+
+message CustomerID {
+  int64 id = 1;
+}
+
+message CustomerResponse {
+  int64 id = 1;
+  string status = 2;
+}

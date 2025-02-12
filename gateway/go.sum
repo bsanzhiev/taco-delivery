@@ -1,5 +1,5 @@
-github.com/bsanzhiev/taco-delivery/common v0.0.0-20250211114056-6045a6009ddd h1:ZzEf956GsqyB4swGMtEiJqfS6gqziRBKHhegBoz2KwM=
-github.com/bsanzhiev/taco-delivery/common v0.0.0-20250211114056-6045a6009ddd/go.mod h1:6ld5Xpyq5SiAbFLP7oujiNY1ZUNsxZ0Zpk8F/JuSxDk=
+github.com/bsanzhiev/taco-delivery/common v0.0.0-20250211142325-6d7fb1e31d65 h1:wRcXwpuISch0DM3Su/5KQs/ZA9eqZdv8xnslBbgBLak=
+github.com/bsanzhiev/taco-delivery/common v0.0.0-20250211142325-6d7fb1e31d65/go.mod h1:6ld5Xpyq5SiAbFLP7oujiNY1ZUNsxZ0Zpk8F/JuSxDk=
 github.com/go-logr/logr v1.4.2 h1:6pFjapn8bFcIbiKo3XT4j/BhANplGihG6tvd+8rYgrY=
 github.com/go-logr/logr v1.4.2/go.mod h1:9T104GzyrTigFIr8wt5mBrctHMim0Nb2HLGrmQ40KvY=
 github.com/go-logr/stdr v1.2.2 h1:hSWxHoqTgW2S2qGc0LTAI563KZ5YKYRhT3MFKZMbjag=

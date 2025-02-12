@@ -3,7 +3,7 @@ module github.com/bsanzhiev/taco-delivery/gateway
 go 1.23.4
 
 require (
-	github.com/bsanzhiev/taco-delivery/common v0.0.0-20250211114056-6045a6009ddd
+	github.com/bsanzhiev/taco-delivery/common v0.0.0-20250211142325-6d7fb1e31d65
 	google.golang.org/grpc v1.70.0
 )
 

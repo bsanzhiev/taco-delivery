@@ -3,14 +3,13 @@ package services
 import (
 	"context"
 
-	modelspb "github.com/bsanzhiev/taco-delivery/common/models"
-	models "github.com/bsanzhiev/taco-delivery/common/models/customer"
+	"github.com/bsanzhiev/taco-delivery/common/models"
 	"google.golang.org/grpc"
 )
 
 // CustomerServiceClient представляет клиент для взаимодействия с user-service.
 type CustomerServiceClient struct {
-	client modelspb.CustomerServiceClient
+	client models.CustomerServiceClient
 	conn   *grpc.ClientConn
 }
 
@@ -31,10 +30,11 @@ func (c *CustomerServiceClient) Close() error {
 }
 
 // CreateUser вызывает метод CreateUser в user-service.
-func (c *CustomerServiceClient) CreateCustomer(ctx context.Context, customer *modelspb.Customer) (*modelspb.CustomerResponse, error) {
-	return &c.client.CreateCustomer(ctx, customer)
+func (c *CustomerServiceClient) CreateCustomer(ctx context.Context, customer *models.Customer) (*models.CustomerResponse, error) {
+	customerResponse, err := c.client.CreateCustomer(ctx, customer)
+	return customerResponse, err
 }
 
-func (c *CustomerServiceClient) GetCustomer(ctx context.Context, customerID *modelspb.CustomerID) (*modelspb.Customer, error) {
+func (c *CustomerServiceClient) GetCustomer(ctx context.Context, customerID *models.CustomerID) (*models.Customer, error) {
 	return c.client.GetCustomer(ctx, customerID)
 }

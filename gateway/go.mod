@@ -4,6 +4,7 @@ go 1.23.4
 
 require (
 	github.com/bsanzhiev/taco-delivery/common v0.0.0-20250212111714-ab7521a48a67
+	github.com/gorilla/mux v1.8.1
 	google.golang.org/grpc v1.70.0
 )
 

@@ -3,10 +3,12 @@ package main
 import (
 	"context"
 	"log"
+	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
 
+	"github.com/bsanzhiev/taco-delivery/gateway/routes"
 	"github.com/bsanzhiev/taco-delivery/gateway/services"
 )
 
@@ -42,9 +44,26 @@ func main() {
 	defer deliveryClient.Close()
 
 	// Setting up router
+	router := routes.SetupRoutes(customerClient, orderClient, deliveryClient)
 
 	// Start HTTP server
+	server := http.Server{
+		Addr:    ":8080",
+		Handler: router,
+	}
+	go func() {
+		log.Println("Starting API Gateway on port 8080...")
+		if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+			log.Fatalf("Server failed: %v", err)
+		}
+	}()
+
 	// Handle signals for graceful shutdown
+	<-signal
+	log.Println("Shutting down API Gateway...")
+
 	// Graceful shutdown
-	// Test line
+	if err := server.Shutdown(ctx); err != nil {
+		log.Printf("Error during shutdown: %v", err)
+	}
 }

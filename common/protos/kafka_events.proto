@@ -1,8 +1,10 @@
 syntax = "proto3";
 
-package github.com/bsanzhiev/taco-deliver/models;
+package models;
 
-message UserCreatedEvent {
+option go_package = "github.com/bsanzhiev/taco-deliver/models";
+
+message CustomerCreatedEvent {
     int64 userID = 1;
     string name = 2;
     string email = 3;

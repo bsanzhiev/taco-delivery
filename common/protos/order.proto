@@ -1,6 +1,8 @@
 syntax = "proto3";
 
-package github.com/bsanzhiev/taco-delivery/models;
+package models;
+
+option go_package = "github.com/bsanzhiev/taco-delivery/models";
 
 service OrderService {
   rpc CreateOrder(Order) returns (OrderResponse);

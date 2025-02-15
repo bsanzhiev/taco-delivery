@@ -1,10 +1,12 @@
 syntax = "proto3";
 
-package github.com/bsanzhiev/taco-delivery/models;
+package models;
+
+option go_package = "github.com/bsanzhiev/taco-delivery/models";
 
 service DeliveryService {
-  rpc UpdateDeliveryStatus(DeliveryStatus) returns (DeliveryResponse)
-  rpc GetDelivery(DeliveryID) returns (Delivery)
+  rpc UpdateDeliveryStatus(DeliveryStatus) returns (DeliveryResponse);
+  rpc GetDelivery(DeliveryID) returns (Delivery);
 }
 
 message Delivery {
